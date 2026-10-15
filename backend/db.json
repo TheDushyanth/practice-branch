@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1789626923303,
+    "petName": "Cyrus",
+    "breed": "Rottweiler",
+    "age": 3,
+    "ownerName": "Linushan",
+    "imageUrl": "/uploads/image-1789626923301-256535898.webp"
+  },
+  {
+    "id": 1789626971049,
+    "petName": "kitty",
+    "breed": "Birman",
+    "age": 1,
+    "ownerName": "Amana",
+    "imageUrl": "/uploads/image-1789626971047-777350735.jpg"
+  },
+  {
+    "id": 1789627032455,
+    "petName": "Gyro",
+    "breed": "Doberman",
+    "age": 2,
+    "ownerName": "Johnson",
+    "imageUrl": "/uploads/image-1789627032453-899482534.jpg"
+  },
+  {
+    "id": 1789627074292,
+    "petName": "kemi",
+    "breed": "British Longhair",
+    "age": 1,
+    "ownerName": "Millie",
+    "imageUrl": "/uploads/image-1789627074284-303299955.jpg"
+  },
+  {
+    "id": 1789719631582,
+    "petName": "Charlie",
+    "breed": "Golden Retriever",
+    "age": 4,
+    "ownerName": "Kumar",
+    "imageUrl": "/uploads/image-1789719631578-151512720.jpg"
+  }
+]

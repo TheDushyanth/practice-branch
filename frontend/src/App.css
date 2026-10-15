@@ -1,0 +1,391 @@
+/* App.css */
+/* Visual design inspired by a warm pet-adoption aesthetic:
+   cream background, sage green primary, terracotta accent, pill buttons, soft rounded cards. */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap');
+
+:root {
+  --cream: #FAF3EA;
+  --cream-deep: #F1E6D6;
+  --card: #FFFFFF;
+  --sage: #8A9A76;
+  --sage-dark: #6C7D59;
+  --sage-pale: #E7EDDF;
+  --terracotta: #E8A87C;
+  --terracotta-dark: #D98A54;
+  --terracotta-pale: #FBE7D4;
+  --ink: #2E2B24;
+  --muted: #8B8578;
+  --border: #EEE3D1;
+  --shadow: 0 8px 24px rgba(90, 79, 55, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--cream);
+  margin: 0;
+  font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 40px 24px;
+  color: var(--ink);
+}
+
+/* ---------- HEADER ---------- */
+.app-header {
+  background: linear-gradient(135deg, var(--sage-pale) 0%, var(--cream) 60%);
+  border-radius: 0 0 32px 32px;
+  padding: 28px 32px;
+  margin: 0 -24px 32px -24px;
+  box-shadow: var(--shadow);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--sage);
+  color: white;
+  flex-shrink: 0;
+}
+
+.app-header h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.7rem;
+  margin: 0;
+  color: var(--ink);
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 2px 0 0 0;
+  font-size: 0.9rem;
+}
+
+.stats-row {
+  display: flex;
+  gap: 10px;
+}
+
+.stat-pill {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 8px 18px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(90, 79, 55, 0.06);
+  min-width: 68px;
+}
+
+.stat-number {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--sage-dark);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- LAYOUT ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ---------- FORM ---------- */
+.pet-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 26px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 24px;
+}
+
+.pet-form h2 {
+  font-family: 'Fraunces', serif;
+  margin: 0 0 14px 0;
+  font-size: 1.25rem;
+  color: var(--sage-dark);
+}
+
+.field-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+/* Round Blueprint's text inputs to match the pill-friendly aesthetic */
+.pet-form .bp5-input,
+.pet-form input[type="text"],
+.pet-form input[type="number"] {
+  border-radius: 12px !important;
+  border: 1.5px solid var(--border) !important;
+  box-shadow: none !important;
+  padding: 8px 12px !important;
+}
+
+.pet-form .bp5-input:focus {
+  border-color: var(--sage) !important;
+}
+
+.file-input {
+  padding: 10px 0 4px 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.image-preview {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-preview img {
+  max-width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+/* ---------- PILL BUTTONS (override Blueprint's default coloring) ---------- */
+.btn-pill {
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  box-shadow: none !important;
+  border: none !important;
+  transition: transform 0.12s ease, box-shadow 0.12s ease !important;
+}
+
+.btn-pill:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary-pill {
+  background: var(--sage) !important;
+  color: white !important;
+}
+.btn-primary-pill:hover {
+  background: var(--sage-dark) !important;
+}
+
+.btn-ghost-pill {
+  background: transparent !important;
+  color: var(--muted) !important;
+  border: 1.5px solid var(--border) !important;
+}
+.btn-ghost-pill:hover {
+  background: var(--cream-deep) !important;
+}
+
+.btn-edit-pill {
+  background: var(--sage-pale) !important;
+  color: var(--sage-dark) !important;
+}
+.btn-edit-pill:hover {
+  background: var(--sage) !important;
+  color: white !important;
+}
+
+.btn-delete-pill {
+  background: var(--terracotta-pale) !important;
+  color: var(--terracotta-dark) !important;
+}
+.btn-delete-pill:hover {
+  background: var(--terracotta) !important;
+  color: white !important;
+}
+
+/* ---------- LIST SECTION / FILTER BAR ---------- */
+.pet-list-section {
+  min-width: 0;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+  background: var(--card);
+  padding: 14px 18px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-bar .bp5-input,
+.filter-bar .bp5-html-select select {
+  border-radius: 999px !important;
+  border: 1.5px solid var(--border) !important;
+  box-shadow: none !important;
+}
+
+.filter-bar .bp5-input:focus,
+.filter-bar .bp5-html-select select:focus {
+  border-color: var(--sage) !important;
+}
+
+.center-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 60px 20px;
+  color: var(--muted);
+  background: var(--card);
+  border: 1.5px dashed var(--border);
+  border-radius: 24px;
+}
+
+/* ---------- PET CARD GRID ---------- */
+.pet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.pet-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.pet-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(90, 79, 55, 0.14);
+}
+
+.pet-photo {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.pet-card-body {
+  padding: 16px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+.pet-card-body h3 {
+  margin: 0;
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+/* Breed badge — pastel palette rotates per breed name so colors vary nicely across the grid */
+.breed-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 999px;
+  width: fit-content;
+  margin: 5px 0;
+  text-transform: capitalize;
+}
+.badge-a { background: var(--terracotta-pale); color: var(--terracotta-dark); }
+.badge-b { background: var(--sage-pale); color: var(--sage-dark); }
+.badge-c { background: #E6E1F5; color: #6C5FA8; }
+.badge-d { background: #FDE4E4; color: #C4585F; }
+.badge-e { background: #DDEFF5; color: #4A8FA8; }
+
+.pet-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .pet-form {
+    position: static;
+  }
+  .header-content {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .pet-grid {
+    grid-template-columns: 1fr;
+  }
+  .app-header h1 {
+    font-size: 1.35rem;
+  }
+  .stats-row {
+    justify-content: center;
+  }
+}
